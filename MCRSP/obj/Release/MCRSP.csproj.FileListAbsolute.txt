@@ -1,0 +1,7 @@
+C:\Users\Arek\RiderProjects\MCRSP\MCRSP\bin\Release\Arro.MCRSP.dll
+C:\Users\Arek\RiderProjects\MCRSP\MCRSP\bin\Release\LazyDuchess.SmoothPatch_publicized.dll
+C:\Users\Arek\RiderProjects\MCRSP\MCRSP\bin\Release\MonoPatcher.dll
+C:\Users\Arek\RiderProjects\MCRSP\MCRSP\obj\Release\MCRSP.csproj.AssemblyReference.cache
+C:\Users\Arek\RiderProjects\MCRSP\MCRSP\obj\Release\MCRSP.csproj.CoreCompileInputs.cache
+C:\Users\Arek\RiderProjects\MCRSP\MCRSP\obj\Release\MCRSP.csproj.Up2Date
+C:\Users\Arek\RiderProjects\MCRSP\MCRSP\obj\Release\Arro.MCRSP.dll

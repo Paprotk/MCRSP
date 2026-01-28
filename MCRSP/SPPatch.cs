@@ -137,6 +137,19 @@ namespace Arro.MCRSP
 
                 currentItemIndex++;
             }
+            
+            if (loadedCount > 0)
+            {
+                int lastRow = (loadedCount - 1) / visibleColumns;
+                int lastCol = (loadedCount - 1) % visibleColumns;
+                mClothingTypesGrid.mLastEntryI = lastCol;
+                mClothingTypesGrid.mLastEntryJ = lastRow;
+            }
+            else
+            {
+                mClothingTypesGrid.mLastEntryI = -1;
+                mClothingTypesGrid.mLastEntryJ = 0;
+            }
 
             while (loadedCount < itemsPerPage)
             {
@@ -244,10 +257,19 @@ namespace Arro.MCRSP
 
                     if (arrayList.Count > 0)
                     {
+                        if (targetRow >= grid.EntriesCountJ)
+                        {
+                            grid.EntriesCountJ = targetRow + 1;
+                            grid.mGrid.SetRowHeight(targetRow, grid.mGrid.DefaultRowHeight);
+                        }
+
                         grid.InternalGrid.SetCellWindow(targetCol, targetRow, casclothingRow,
                             grid.mbStretchCellWindows);
                         grid.InternalGrid.CellTags[targetCol, targetRow] = casclothingRow;
                         result = true;
+                        
+                        grid.mLastEntryI = targetCol;
+                        grid.mLastEntryJ = targetRow;
 
                         if (casclothingRow.SelectedItem != -1)
                         {
@@ -304,12 +326,21 @@ namespace Arro.MCRSP
 
                         if (arrayList.Count > 0)
                         {
+                            if (targetRow >= grid.EntriesCountJ)
+                            {
+                                grid.EntriesCountJ = targetRow + 1;
+                                grid.mGrid.SetRowHeight(targetRow, grid.mGrid.DefaultRowHeight);
+                            }
+
                             grid.InternalGrid.SetCellWindow(targetCol, targetRow, casclothingRow,
                                 grid.mbStretchCellWindows);
                             grid.InternalGrid.CellTags[targetCol, targetRow] = casclothingRow;
+                            
+                            grid.mLastEntryI = targetCol;
+                            grid.mLastEntryJ = targetRow;
+                            
+                            result = true;
                         }
-
-                        result = true;
                     }
                 }
             }

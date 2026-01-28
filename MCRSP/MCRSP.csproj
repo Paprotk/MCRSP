@@ -102,7 +102,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)Tools\ts3buildtool.exe" -modName="Arro_MCRSP_2.1" -dllPath="$(TargetPath)" -defaultPath="Packages\Arro"</PostBuildEvent>
+    <Version>2.1</Version>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>"$(SolutionDir)Tools\ts3buildtool.exe" -modName="Arro_$(ProjectName)_$(Version)" -dllPath="$(TargetPath)" -defaultPath="Packages\Arro" -skip="New Folder"</PostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <UpToDateCheckInput Include="resources\**\*" />
